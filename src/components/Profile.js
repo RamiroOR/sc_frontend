@@ -20,7 +20,7 @@ const Profile = () => {
           },
         };
 
-        const res = await axios.get('http://localhost:5000/api/users/me', config);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/me`, config);
         setUser(res.data);
         setLoading(false);
       } catch (err) {
@@ -51,7 +51,7 @@ const Profile = () => {
         },
       };
 
-      const res = await axios.put('http://localhost:5000/api/users/profile', user, config);
+      const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/users/profile`, user, config);
       setUser(res.data);
       setSuccess(true);
       setTimeout(() => setSuccess(false), 3000); // Hide success message after 3 seconds

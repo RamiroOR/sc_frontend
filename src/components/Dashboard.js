@@ -23,7 +23,7 @@ const Dashboard = () => {
           'x-auth-token': token,
         },
       };
-      const res = await axios.get('http://localhost:5000/api/posts', config);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/posts`, config);
       setPosts(res.data);
       console.log('Posts fetched:', res.data); // Debug statement
     } catch (err) {
@@ -39,7 +39,7 @@ const Dashboard = () => {
           'x-auth-token': token,
         },
       };
-      const res = await axios.get('http://localhost:5000/api/users/me', config);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/me`, config);
       setUser(res.data);
       console.log('User fetched:', res.data); // Debug statement
     } catch (err) {

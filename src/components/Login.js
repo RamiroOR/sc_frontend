@@ -20,7 +20,7 @@ const Login = () => {
       };
 
       const body = JSON.stringify({ email, password });
-      const res = await axios.post('http://localhost:5000/api/users/login', body, config);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/login`, body, config);
 
       localStorage.setItem('token', res.data.token);
       navigate('/dashboard');

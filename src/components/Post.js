@@ -14,7 +14,7 @@ const Post = ({ post, onLike }) => {
         },
       };
 
-      await axios.post(`http://localhost:5000/api/likes/${post._id}/like`, {}, config);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/likes/${post._id}/like`, {}, config);
       onLike(post._id);
     } catch (err) {
     }

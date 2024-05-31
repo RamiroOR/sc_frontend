@@ -17,7 +17,7 @@ const CreatePost = ({ onPostCreated }) => {
       };
 
       const body = JSON.stringify({ content });
-      const res = await axios.post('http://localhost:5000/api/posts', body, config);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/posts`, body, config);
 
       onPostCreated(res.data); // Pasar el nuevo post al componente padre
       setContent('');

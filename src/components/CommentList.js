@@ -16,7 +16,7 @@ const CommentList = ({ postId }) => {
         },
       };
 
-      const res = await axios.get(`http://localhost:5000/api/comments/${postId}`, config);
+      const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/comments/${postId}`, config);
       setComments(res.data);
     } catch (err) {
     }
@@ -44,7 +44,7 @@ const CommentList = ({ postId }) => {
       };
 
       const body = JSON.stringify({ text });
-      const res = await axios.post(`http://localhost:5000/api/comments/${postId}`, body, config);
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/comments/${postId}`, body, config);
 
       setComments([res.data, ...comments]); // Add the new comment at the beginning
       setText('');

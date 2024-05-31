@@ -20,7 +20,7 @@ const UserProfile = () => {
           },
         };
 
-        const res = await axios.get(`http://localhost:5000/api/users/${userId}`, config);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/${userId}`, config);
         setUser(res.data);
         setLoading(false);
       } catch (err) {
