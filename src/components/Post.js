@@ -17,7 +17,6 @@ const Post = ({ post, onLike }) => {
       await axios.post(`http://localhost:5000/api/likes/${post._id}/like`, {}, config);
       onLike(post._id);
     } catch (err) {
-      console.error(err);
     }
   };
 

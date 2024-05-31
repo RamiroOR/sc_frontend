@@ -22,7 +22,6 @@ const CreatePost = ({ onPostCreated }) => {
       onPostCreated(res.data); // Pasar el nuevo post al componente padre
       setContent('');
     } catch (err) {
-      console.error(err);
     }
   };
 

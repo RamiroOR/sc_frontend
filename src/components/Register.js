@@ -34,7 +34,6 @@ const Register = () => {
       localStorage.setItem('token', res.data.token);
       navigate('/dashboard');
     } catch (err) {
-      console.error(err.response.data);
       setError(err.response.data.msg || 'Registration failed');
     }
   };

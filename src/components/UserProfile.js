@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './UserProfile.css'; // Import the custom CSS
 
 const UserProfile = () => {
   const { userId } = useParams();
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -18,13 +20,10 @@ const UserProfile = () => {
           },
         };
 
-        console.log(`Fetching profile for user ID: ${userId}`); // Log del ID de usuario
         const res = await axios.get(`http://localhost:5000/api/users/${userId}`, config);
-        console.log('User profile data:', res.data); // Log de la respuesta
         setUser(res.data);
         setLoading(false);
       } catch (err) {
-        console.error('Error fetching user profile:', err); // Log de error
         setError('Error fetching user profile');
         setLoading(false);
       }
@@ -37,13 +36,14 @@ const UserProfile = () => {
   if (error) return <p className="text-danger">{error}</p>;
 
   return (
-    <div>
+    <div className="user-profile-container">
       {user && (
-        <div>
-          <h1>{user.name}</h1>
-          <p>Email: {user.email}</p>
-          <p>Skills: {user.skills.join(', ')}</p>
+        <div className="user-profile-card">
+          <h1 className="user-profile-name">{user.name}</h1>
+          <p className="user-profile-email">Email: {user.email}</p>
+          <p className="user-profile-skills">Skills: {user.skills.join(', ')}</p>
           {/* Aquí puedes añadir más detalles del perfil del usuario */}
+          <button className="btn btn-secondary mt-3" onClick={() => navigate(-1)}>Back</button>
         </div>
       )}
     </div>

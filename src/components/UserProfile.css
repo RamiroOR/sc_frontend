@@ -1,0 +1,61 @@
+/* src/components/UserProfile.css */
+
+.user-profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-card {
+  text-align: center;
+}
+
+.user-profile-name {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.user-profile-email,
+.user-profile-skills {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.user-profile-email {
+  color: #333;
+}
+
+.user-profile-skills {
+  color: #555;
+}
+
+.text-danger {
+  color: #dc3545;
+  text-align: center;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}

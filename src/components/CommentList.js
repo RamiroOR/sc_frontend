@@ -1,4 +1,3 @@
-// src/components/CommentList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Comment from './Comment';
@@ -8,24 +7,29 @@ const CommentList = ({ postId }) => {
   const [comments, setComments] = useState([]);
   const [text, setText] = useState('');
 
+  const fetchComments = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const config = {
+        headers: {
+          'x-auth-token': token,
+        },
+      };
+
+      const res = await axios.get(`http://localhost:5000/api/comments/${postId}`, config);
+      setComments(res.data);
+    } catch (err) {
+    }
+  };
+
   useEffect(() => {
-    const fetchComments = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        const config = {
-          headers: {
-            'x-auth-token': token,
-          },
-        };
-
-        const res = await axios.get(`http://localhost:5000/api/comments/${postId}`, config);
-        setComments(res.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
     fetchComments();
+
+    const interval = setInterval(() => {
+      fetchComments();
+    }, 5000); // Fetch new comments every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [postId]);
 
   const handleSubmit = async (e) => {
@@ -42,10 +46,9 @@ const CommentList = ({ postId }) => {
       const body = JSON.stringify({ text });
       const res = await axios.post(`http://localhost:5000/api/comments/${postId}`, body, config);
 
-      setComments([res.data, ...comments]); // Añadir el nuevo comentario al principio
+      setComments([res.data, ...comments]); // Add the new comment at the beginning
       setText('');
     } catch (err) {
-      console.error(err);
     }
   };
 

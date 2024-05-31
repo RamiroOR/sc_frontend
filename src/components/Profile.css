@@ -1,0 +1,68 @@
+/* src/components/Profile.css */
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-form h2 {
+    text-align: center;
+    color: #007bff;
+  }
+  
+  .profile-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .profile-form .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .profile-form .btn {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+  }
+  
+  .profile-form .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .profile-form .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+  }
+  
+  .profile-form .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  .profile-form .alert {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .profile-form .text-danger {
+    text-align: center;
+  }
+  
