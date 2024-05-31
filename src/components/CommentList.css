@@ -1,0 +1,12 @@
+/* src/components/CommentList.css */
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-section .form-group {
+  margin-bottom: 10px;
+}
+
+.comment-section .comments {
+  margin-top: 20px;
+}

@@ -1,0 +1,92 @@
+/* src/components/Dashboard.css */
+
+/* Estilo para la barra lateral */
+.sidebar {
+  background-color: #343a40;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: #fff;
+  font-size: 1.1em;
+  padding: 15px 20px;
+}
+
+.sidebar .nav-link.active {
+  font-weight: bold;
+  background-color: #007bff;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #495057;
+}
+
+/* Estilo para el contenido principal */
+.main-content {
+  padding: 20px;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Estilo para las tarjetas de post */
+.post-card {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.post-card p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.post-card .btn {
+  margin-right: 10px;
+}
+
+/* Estilo para el formulario de creación de post */
+.create-post-form {
+  margin-bottom: 20px;
+}
+
+.create-post-form .form-group {
+  margin-bottom: 10px;
+}
+
+/* Estilo para la sección de comentarios */
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-section .form-group {
+  margin-bottom: 10px;
+}
+
+.comment-section .comments {
+  margin-top: 20px;
+}
+
+/* Estilo para los comentarios */
+.comment {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  margin-bottom: 5px;
+}
+
+.comment small {
+  color: #6c757d;
+}

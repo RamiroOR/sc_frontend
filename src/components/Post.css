@@ -1,0 +1,14 @@
+/* src/components/Post.css */
+.post-card {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.post-card p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.post-card .btn {
+  margin-right: 10px;
+}
